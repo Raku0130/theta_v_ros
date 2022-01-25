@@ -57,9 +57,9 @@ bool thetaVDriver::gst_src_init(gst_src& srcIn)
 
   snprintf(pipeline_str, MAX_PIPELINE_LEN, "appsrc name=ap ! queue ! h264parse ! queue ! %s ", pipe_proc);
 
-  int *argc1;
+  int argc1 = 0;
   char ***argv1;
-  gst_init(argc1, argv1);
+  gst_init(&argc1, argv1);  
   srcIn.timer = g_timer_new();
   srcIn.loop = g_main_loop_new(NULL, TRUE);
   srcIn.pipeline = gst_parse_launch(pipeline_str, NULL);
