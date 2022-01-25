@@ -21,12 +21,14 @@ void thetaVDriver::getparam()
 {
   m_param_useNVdec    = false;
   m_param_use4K       = false;
+  m_param_thetaIndex  = 0;
   m_param_rawOn       = false;
   m_param_compressOn  = false;
   m_param_pngLevel    = 3;
   // get param
   ros::param::get("~nvdec",                m_param_useNVdec   );
   ros::param::get("~use4k",                m_param_use4K      );
+  ros::param::get("~m_param_thetaIndex",   m_param_thetaIndex );
   ros::param::get("~image/raw/on",         m_param_rawOn      );
   ros::param::get("~image/compress/on",    m_param_compressOn );
   ros::param::get("~image/compress/level", m_param_pngLevel   );
